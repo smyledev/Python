@@ -84,7 +84,7 @@ DNA_strand("ATTGC")
 # Task 5
 # v1
 def spin_words(sentence):
-    spl = 
+    spl = sentence.split(" ")
     i = 0
     for word in spl:
         if (len(word) >= 5):
@@ -102,3 +102,56 @@ def spin_words(sentence):
 
 
 print(spin_words("or letter spaces the letters words"))
+
+
+
+# Task 6
+def filter_list(l):
+    return [i for i in l if isinstance(i, int)] 
+
+print(filter_list([1, 'a', 'b', 0, 15]))
+
+
+
+# Task 7
+# v1
+def solution(s):
+    new_str = ""
+    for i in range(0, len(s)):
+        if s[i].isupper():
+            new_str += " "
+        new_str += s[i]
+    return new_str
+
+# v2
+def solution(s):
+    return ''.join(' ' + c if c.isupper() else c for c in s)
+
+print(solution("helloWorld"))
+
+
+# Task 8
+# v1
+def valid_braces(string):
+    if (string[0] in (")","}","]") or len(string) < 2):
+        return False
+    else:
+        length = len(string)
+        i = 0
+        while i < length:
+            if (string[i] == "]" and string[i - 1] == "[" or string[i] == ")" and string[i - 1] == "(" or string[i] == "}" and string[i - 1] == "{"):
+                string = string[:i - 1] + string[i + 1:]
+                length -= 2 
+                i -= 2
+            elif string[i] not in ("(","{","["):
+                return False 
+            i += 1
+    return len(string) == 0
+
+# v2
+def validBraces(s):
+  while '{}' in s or '()' in s or '[]' in s:
+      s=s.replace('{}','')
+      s=s.replace('[]','')
+      s=s.replace('()','')
+  return s==''
