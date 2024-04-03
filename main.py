@@ -155,3 +155,64 @@ def validBraces(s):
       s=s.replace('[]','')
       s=s.replace('()','')
   return s==''
+
+
+  # Task 9
+def is_pangram(s):
+uniq_s = []
+for i in s:
+    if i not in uniq_s and i.isalpha():
+        uniq_s.append(i.lower())
+return len(uniq_s) == 26
+
+print(is_pangram("The quick, brown fox jumps over the lazy dog!"))
+
+
+# Task 10
+# v1
+def collinearity(x1, y1, x2, y2):
+    if (x2 == 0 and y2 == 0):
+        return True
+    elif (x1 == 0):
+        if (y1 == 0):
+            return True
+        else:
+            return (x2 == 0 and y2 != 0)            
+    else:
+        if (y1 == 0):
+            return (x2 != 0 and y2 == 0)
+        else:
+            return x2 / x1 == y2 / y1 
+
+# v2
+def collinearity(x1, y1, x2, y2):
+    return x1 * y2 == x2 * y1
+
+
+# Task 11
+def queue_time(customers, n):
+    count = sum(customers)
+    time = 0
+    i = 0
+    new_count = 0
+    while (len(customers) > 0):
+        if (len(customers) == 1):
+            time += customers[i]     
+            count -= customers[i]
+            break
+        else:
+            new_count = n if n < len(customers) else len(customers)
+            j = 0
+            while j < new_count:
+                customers[j] -= 1
+                if (customers[j] == 0):
+                    customers.pop(j)
+                    new_count -= 1;
+                else:
+                    j += 1
+            time += 1
+            count -= 1        
+    return time
+
+print(queue_time([1,2,3,4,5], 1))
+print(queue_time([1,2,3,4,5], 100))
