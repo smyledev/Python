@@ -216,3 +216,46 @@ def queue_time(customers, n):
 
 print(queue_time([1,2,3,4,5], 1))
 print(queue_time([1,2,3,4,5], 100))
+
+
+
+# Task 12
+# v1
+def cog_RPM(cogs):
+    length = len(cogs)
+    res = 1
+    if length > 0 : res = cogs[0] / cogs[length - 1] 
+    if length % 2 == 0 : res *= -1
+    return res
+
+cog_RPM([100, 75])
+cog_RPM([100, 100, 75])
+
+
+# v2
+def cog_RPM(cogs):
+    length = len(cogs)
+    return cogs[0] / cogs[-1] * (-1)**(length - 1) if length > 0 else 1
+
+
+# Task 13
+# v1
+def continued_fraction(nu: int, de:int) -> list[int]:
+    arr = []
+    wh_part = nu
+    if nu != 0:
+        while (de != 0) and (wh_part // de > 0 or wh_part % de > 0): 
+            arr.append(wh_part // de)
+            wh_part, de = de, wh_part % de
+        if (de != 0): arr.append(wh_part // de)
+    return arr
+
+# v2
+def continued_fraction(nu: int, de:int) -> list[int]:
+    arr = []
+    while nu and de:
+        arr.append(nu // de)
+        nu, de = de, nu % de
+    return arr
+
+print(continued_fraction(311, 144))
