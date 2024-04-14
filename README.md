@@ -1,4 +1,4 @@
-## Some constructions of working with lists
+## Examples
 
 
 ### Spining words with length more than 5 words
@@ -115,3 +115,4 @@ def minus(n):      return '-' + str(n)
 def times(n):      return '*' + str(n)
 def divided_by(n): return '//' + str(n)
 ```
+
