@@ -1,4 +1,4 @@
-## Some constructions of working with lists
+## Examples
 
 
 ### Spining words with length more than 5 words
