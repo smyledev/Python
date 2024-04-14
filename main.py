@@ -259,3 +259,114 @@ def continued_fraction(nu: int, de:int) -> list[int]:
     return arr
 
 print(continued_fraction(311, 144))
+
+
+
+# Task 14
+# v1
+def pig_it(text):
+    arr = text.split(' ')
+    new_str = ''
+    added_str = ''
+    for i in range(0, len(arr)):
+        added_str = arr[i] 
+        if len(arr[i]) > 1: added_str = arr[i][1:] + arr[i][0]
+        if arr[i].isalpha(): new_str += added_str + 'ay ' 
+        else: new_str += added_str + ' '
+    return new_str[:len(new_str) - 1]
+
+# v2
+def pig_it(text):
+    lst = text.split()
+    return ' '.join( [word[1:] + word[:1] + 'ay' if word.isalpha() else word for word in lst])
+
+# Should return 'igPay atinlay siay oolcay'
+pig_it('Pig latin is cool')
+
+# Should return 'Oay emporatay oay oresmay !'
+pig_it('O tempora o mores !')
+
+
+# Task 15
+# v1
+def zero(param = None): 
+    if param == None: return "0"
+    else: return eval("0" + param)
+
+def one(param = None): 
+    if param == None: return "1"
+    else: return eval("1" + param)
+
+def two(param = None): 
+    if param == None: return "2"
+    else: return eval("2" + param)
+
+def three(param = None): 
+    if param == None: return "3"
+    else: return eval("3" + param)
+
+def four(param = None): 
+    if param == None: return "4"
+    else: return eval("4" + param)
+
+def five(param = None): 
+    if param == None: return "5"
+    else: return eval("5" + param)
+
+def six(param = None): 
+    if param == None: return "6"
+    else: return eval("6" + param)
+
+def seven(param = None): 
+    if param == None: return "7"
+    else: return eval("7" + param)
+
+def eight(param = None):
+    if param == None: return "8"
+    else: return eval("8" + param)
+
+def nine(param = None): 
+    if param == None: return "9"
+    else: return eval("9" + param)
+
+
+def plus(param = None): 
+    if param != None:
+        return "+" + param
+
+def minus(param = None): 
+    if param != None:
+        return "-" + param
+
+def times(param = None):
+    if param != None:
+        return "*" + param
+
+def divided_by(param = None):
+    if param != None:
+        if param == '0': return "*" + param 
+        else: return "//" + param
+
+
+# v2
+def zero(arg=""):  return eval("0" + arg)
+def one(arg=""):   return eval("1" + arg)
+def two(arg=""):   return eval("2" + arg)
+def three(arg=""): return eval("3" + arg)
+def four(arg=""):  return eval("4" + arg)
+def five(arg=""):  return eval("5" + arg)
+def six(arg=""):   return eval("6" + arg)
+def seven(arg=""): return eval("7" + arg)
+def eight(arg=""): return eval("8" + arg)
+def nine(arg=""):  return eval("9" + arg)
+
+def plus(n):       return '+' + str(n)
+def minus(n):      return '-' + str(n)
+def times(n):      return '*' + str(n)
+def divided_by(n): return '//' + str(n)
+
+
+print(two(plus(three())))
+print(seven(times(five())))
+print(eight(minus(three())))
+print(five(divided_by(four())))
