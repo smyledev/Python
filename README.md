@@ -149,7 +149,7 @@ def continued_fraction(nu: int, de:int) -> list[int]:
     return arr
 ```
 
-# Interesting numbers 
+### Interesting numbers 
 Interesting numbers are 3-or-more digit numbers that meet one or more of the following criteria:
 
 Any digit followed by all zeros: 100, 90000
