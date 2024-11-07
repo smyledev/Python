@@ -1,4 +1,4 @@
-## Solutions
+# My solutions
 
 ## Example of using unit test
 ```python
