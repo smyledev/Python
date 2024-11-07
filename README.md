@@ -1,4 +1,4 @@
-## Examples
+## Solutions
 
 
 ### Spining words with length more than 5 words
