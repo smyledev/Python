@@ -13,16 +13,19 @@ class Worker:
             setattr(self, cur_struct, worker_data[i])
 
     def __str__(self):
-    	return f"Id:{self.id}, email:{self.email}, name:{self.name}, " \
+        return f"Id:{self.id}, email:{self.email}, name:{self.name}, " \
                f"department:{self.department}, hours worked: {self.hours_worked}, " \
                f"hourly rate:{self.hourly_rate}"
  
 
 params = argv
 files = []
+type_of_task = ""
 for param in params:
-	if ".csv" in param:
-		files.append(param)
+    if ".csv" in param:
+        files.append(param)
+    elif "--report" in param:
+        type_of_task = "report"
 
 workers = []
 
@@ -44,7 +47,7 @@ for file in files:
     except Exception as e:
         print("Error: smth went wrong")
 
-if len(workers) > 0:
+if len(workers) > 0 and type_of_task == "report":
     departments = []
     max_len_department = 0
     max_len_name = 0

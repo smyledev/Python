@@ -11,10 +11,10 @@
 #### Getting report from 1 file
 ![GettingDataFromOneFile](README.assets/GettingDataFromOneFile.PNG)
 
-#### Getting report from 3 file
+#### Getting report from 3 files
 ![GettingDataFromThreeFiles](README.assets/GettingDataFromThreeFiles.PNG)
 
-#### Getting report without correct file
+#### Getting message when invalid parameters are being passed
 ![NoGettingData](README.assets/NoGettingData.PNG)
 
 
@@ -43,9 +43,12 @@ class Worker:
 
 params = argv
 files = []
+type_of_task = ""
 for param in params:
 	if ".csv" in param:
 		files.append(param)
+	elif "--report" in param:
+		type_of_task = "report"
 
 workers = []
 
@@ -67,7 +70,7 @@ for file in files:
     except Exception as e:
         print("Error: smth went wrong")
 
-if len(workers) > 0:
+if len(workers) > 0 and type_of_task == "report":
     departments = []
     max_len_department = 0
     max_len_name = 0
