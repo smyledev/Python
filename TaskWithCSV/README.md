@@ -2,14 +2,19 @@
 
 Нужно написать скрипт, который читает данные сотрудников из файлов в формате csv и формирует простой отчет по заработной плате. В скрипт можно передать несколько файлов и тип отчета который нужно сформировать, в данном случае отчёт по зарплатам payout. Файлы на вход всегда в формате csv и без ошибок, валидный csv. Название отчета передается через  параметр --report. Реализовать нужно только отчёт по зарплатам, но желательно заложить возможность добавления новых отчётов, например если захочется посмотреть среднюю ставку в час по отделам то это можно будет быстро добавить.
 
-![Detailed task](Task.pdf)
+[Detailed task](Task.pdf)
 
 # Solution
 
 ## Examples of commands and their results
 
+#### Getting report from 1 file
 ![GettingDataFromOneFile](README.assets/GettingDataFromOneFile.PNG)
+
+#### Getting report from 3 file
 ![GettingDataFromThreeFiles](README.assets/GettingDataFromThreeFiles.PNG)
+
+#### Getting report without correct file
 ![NoGettingData](README.assets/NoGettingData.PNG)
 
 
