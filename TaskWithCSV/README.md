@@ -121,7 +121,7 @@ if len(workers) > 0 and type_of_task == "report":
                 space_rate = " " * (max_len_rate - len(cur_worker.hourly_rate) + 2)
                 string_to_output = f"{space_department_hyphen} {cur_worker.name} {space_name}" \
                                    f"{cur_worker.hours_worked}   {space_hours}" \
-                                   f"{cur_worker.hourly_rate} {space_rate} $ {str(sum_of_work)}"
+                                   f"{cur_worker.hourly_rate} {space_rate} ${str(sum_of_work)}"
                 print(string_to_output)
 
         space_name = " " * (max_len_name + 2)
